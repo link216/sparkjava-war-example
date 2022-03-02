@@ -5,11 +5,7 @@ pipeline {
     stage ('Download') {
       steps {
         sh '''
-        uname -a
-        cat /etc/os-release
-        ps -ef
-        echo "Do something"
-        sudo docker ps
+      sudo docker run -d -it --rm --name my-maven-project -v "$(pwd)":/home/ec2-user/workspace/pipelinprueba -w /home/ec2-user/workspace/pipelinprueba maven:3.3-jdk-8 mvn clean install
         '''
       }
     }
