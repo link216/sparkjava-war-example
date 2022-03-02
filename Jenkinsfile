@@ -9,7 +9,7 @@ pipeline {
         cat /etc/os-release
         ps -ef
         echo "Do something"
-        docker ps
+        sudo docker ps
         '''
       }
     }
