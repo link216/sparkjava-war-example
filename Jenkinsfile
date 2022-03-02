@@ -2,9 +2,14 @@ pipeline {
   agent { label 'rhelagent' 
   }
   stages {
-    stage ('Build') {
+    stage ('Download') {
       steps {
+        sh '''
+        uname -a
+        cat /etc/os-release
+        ps -ef
         echo "Do something"
+        '''
       }
     }
     stage ('Test') {
